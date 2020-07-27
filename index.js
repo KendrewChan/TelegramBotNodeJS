@@ -13,3 +13,8 @@ const sendMessage = (userid, message) => {
 		.catch(err => console.log(err));
 }
 
+// Get TelegramID: https://t.me/userinfobot
+const TELEGRAM_ID = 0 // Insert ur id here
+
+sendMessage(TELEGRAM_ID, "hi there");
+
