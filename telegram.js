@@ -11,6 +11,7 @@ const Telegram = {
 			chat_id: userid,
 			text: message
 		}
+		console.log("inside");
 		axios.post(`${TELE_URL}/sendMessage`, data)
 			.catch(err => console.log(err));
 	},
@@ -24,10 +25,10 @@ const Telegram = {
 				const chatID = message.chat.id;
 				switch (command) {
 					case "/help":
-						this.sendMessage(chatID, "You've just typed /help :D");
+						Telegram.sendMessage(chatID, "You've just typed /help :D");
 						break;
 					default:
-						this.sendMessage(chatID, "Sorry! That's an invalid command :(");
+						Telegram.sendMessage(chatID, "Sorry! That's an invalid command :(");
 						break;
 				}
 			}
