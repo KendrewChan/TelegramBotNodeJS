@@ -24,10 +24,10 @@ const Telegram = {
 				const chatID = message.chat.id;
 				switch (command) {
 					case "/help":
-						sendMessage(chatID, "You've just typed /help :D");
+						this.sendMessage(chatID, "You've just typed /help :D");
 						break;
 					default:
-						sendMessage(chatID, "Sorry! That's an invalid command :(");
+						this.sendMessage(chatID, "Sorry! That's an invalid command :(");
 						break;
 				}
 			}
