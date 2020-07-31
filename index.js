@@ -1,6 +1,6 @@
 require('dotenv').config();
 const Telegram = require("./telegram");
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 var express = require('express');
 
 const app = express();
