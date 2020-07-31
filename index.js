@@ -1,8 +1,9 @@
+require('dotenv').config();
 const axios = require("axios");
 
-const API_SECRET = "1034174341:AAEU_XhxGFzwTNpHEFJ8Y_R71aQ6BLJdEMw";
+// Setting up hooks: https://medium.com/@xabaras/setting-your-telegram-bot-webhook-the-easy-way-c7577b2d6f72
 
-const TELE_URL = `https://api.telegram.org/bot${API_SECRET}`;
+const TELE_URL = `https://api.telegram.org/bot${process.env.API_SECRET}`;
 
 const sendMessage = (userid, message) => {
 	const data = {
