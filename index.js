@@ -5,11 +5,9 @@ const { checkCommands } = require('./telegram');
 
 const app = express();
 
-const PRODUCTION = false;
+const PRODUCTION = true;
 
 if (PRODUCTION) {
-	// Bodyparser middleware 
-	//   -> it passes through here before arriving as req (req.body)
 	app.use(
 	urlencoded({
 		extended: false,

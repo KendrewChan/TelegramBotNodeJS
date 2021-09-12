@@ -1,8 +1,6 @@
 require('dotenv').config();
 const axios = require("axios");
 
-// Setting up hooks: https://medium.com/@xabaras/setting-your-telegram-bot-webhook-the-easy-way-c7577b2d6f72
-
 const TELE_URL = `https://api.telegram.org/bot${process.env.API_SECRET}`;
 
 const Telegram = {
@@ -11,7 +9,6 @@ const Telegram = {
 			chat_id: userid,
 			text: message
 		}
-		console.log("inside");
 		axios.post(`${TELE_URL}/sendMessage`, data)
 			.catch(err => console.log(err));
 	},
@@ -50,7 +47,4 @@ const Telegram = {
 	},
 }
 
-// getUpdates(checkCommands);
-// Sends updates based upon commands by user
-// Get TelegramID: https://t.me/userinfobot
 module.exports = Telegram;
