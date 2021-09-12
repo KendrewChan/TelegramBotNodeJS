@@ -1,6 +1,5 @@
 require('dotenv').config();
 const Telegram = require("./telegram");
-var bodyParser = require('body-parser');
 var express = require('express');
 const { checkCommands } = require('./telegram');
 
@@ -12,11 +11,11 @@ if (PRODUCTION) {
 	// Bodyparser middleware 
 	//   -> it passes through here before arriving as req (req.body)
 	app.use(
-	bodyParser.urlencoded({
+	urlencoded({
 		extended: false,
 	})
 	);
-	app.use(bodyParser.json());
+	app.use(json());
 
 	app.post('/', (req, res) => {
 		// Web hooks
